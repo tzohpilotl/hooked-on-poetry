@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+:root {
+  --text: #6B6560;
+  --text-h: #1C1A17;
+  --bg: #FAF8F5;
+  --border: #DDD9D3;
+  --code-bg: #F2EFE9;
+  --accent: #8278B8;
+  --accent-bg: rgba(130, 120, 184, 0.10);
+  --accent-border: rgba(130, 120, 184, 0.35);
+  --shadow: rgba(0, 0, 0, 0.06) 0 2px 8px, rgba(0, 0, 0, 0.04) 0 1px 2px;
+
+  --ds-primary: #5F7A5F;
+  --ds-primary-hover: #4E664E;
+  --ds-active: #8278B8;
+  --ds-active-text: #ffffff;
+  --ds-muted: #B5B0A8;
+  --ds-on-primary: #ffffff;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --serif: 'Lora', Georgia, 'Times New Roman', serif;
+  --heading: 'Lora', Georgia, 'Times New Roman', serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/150% var(--sans);
+  letter-spacing: 0.12px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9E9A91;
+    --text-h: #EAE5DC;
+    --bg: #1A1916;
+    --border: #2E2C27;
+    --code-bg: #242220;
+    --accent: #A89EDE;
+    --accent-bg: rgba(168, 158, 222, 0.12);
+    --accent-border: rgba(168, 158, 222, 0.35);
+    --shadow: rgba(0, 0, 0, 0.35) 0 2px 8px, rgba(0, 0, 0, 0.2) 0 1px 2px;
+
+    --ds-primary: #7A9C7A;
+    --ds-primary-hover: #8AAE8A;
+    --ds-active: #A89EDE;
+    --ds-active-text: #1A1916;
+  }
+}
+
+#root {
+  margin: 0 auto;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--heading);
+  color: var(--text-h);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}

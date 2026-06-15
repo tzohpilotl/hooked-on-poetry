@@ -1,0 +1,32 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 24px;
+  background: var(--ds-primary);
+  color: var(--ds-on-primary);
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--ds-primary-hover);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn--full {
+  width: 100%;
+  box-sizing: border-box;
+}

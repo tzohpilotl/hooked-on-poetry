@@ -1,0 +1,50 @@
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 24px 40px;
+  min-height: 100svh;
+  box-sizing: border-box;
+}
+
+/* Logo — each word is a block, creating a stacked masthead */
+.view-title {
+  font-family: var(--heading);
+  font-size: 44px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  color: var(--text-h);
+  margin: 0 0 8px;
+  text-align: left;
+  width: 100%;
+  line-height: 1.05;
+}
+
+.view-title span {
+  display: block;
+}
+
+/* "on" reads as a typographic subtitle between the two content words */
+.view-title span:nth-child(2) {
+  font-size: 0.52em;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  color: var(--ds-primary);
+  line-height: 1.6;
+}
+
+#app > section {
+  width: 100%;
+  max-width: 480px;
+}
+
+@media (max-width: 600px) {
+  #app {
+    padding: 32px 16px 32px;
+  }
+
+  .view-title {
+    font-size: 34px;
+  }
+}

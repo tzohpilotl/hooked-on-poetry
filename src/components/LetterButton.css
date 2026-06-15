@@ -1,0 +1,62 @@
+.letter-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--text-h);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  font-family: var(--heading);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+  flex-shrink: 0;
+}
+
+.letter-btn:hover:not(.letter-btn--active):not(.letter-btn--exhausted) {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+  color: var(--text-h);
+}
+
+.letter-btn--active {
+  background: var(--ds-active);
+  color: var(--ds-active-text);
+  border-color: var(--ds-active);
+}
+
+.letter-btn--loading {
+  animation: letter-pulse 0.8s ease-in-out infinite;
+  cursor: wait;
+}
+
+@keyframes letter-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.letter-btn--shaking {
+  animation: letter-shake 0.55s ease-in-out;
+}
+
+@keyframes letter-shake {
+  0%, 100% { transform: translateX(0); }
+  15%       { transform: translateX(-5px); }
+  35%       { transform: translateX(5px); }
+  55%       { transform: translateX(-4px); }
+  75%       { transform: translateX(4px); }
+  90%       { transform: translateX(-2px); }
+}
+
+.letter-btn--exhausted {
+  background: var(--bg);
+  color: var(--ds-muted);
+  border-color: var(--border);
+  opacity: 0.45;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
