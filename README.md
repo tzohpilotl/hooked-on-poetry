@@ -1,75 +1,42 @@
-# React + TypeScript + Vite
+# Hooked on Poetry
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal poetry reader built with React and TypeScript. Fetches poems from the [PoetryDB](https://poetrydb.org) public API.
 
-Currently, two official plugins are available:
+**Live site:** https://tzohpilotl.github.io/hooked-on-poetry/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Random poem** — loads a random poem on startup, refresh on demand
+- **Browse by author** — pick a letter from the A–Z grid to load matching authors, then select one from the dropdown and read one of their poems
+- Letters with no authors shake and are marked exhausted so you don't click them twice
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Stack
 
-Note: This will impact Vite dev & build performances.
+- React 19 + TypeScript
+- Vite 8 with the React Compiler enabled
+- Plain CSS (no framework)
+- Playwright for end-to-end tests
 
-## Expanding the ESLint configuration
+## Getting started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The app runs at `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Scripts
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Command | Description |
+|---|---|
+| `npm run dev` | Start dev server |
+| `npm run build` | Type-check and build to `dist/` |
+| `npm run lint` | Run ESLint |
+| `npm test` | Run Playwright end-to-end tests |
+
+## Deployment
+
+Pushes to `main` automatically deploy to GitHub Pages via the workflow in [.github/workflows/deploy.yml](.github/workflows/deploy.yml). No secrets or manual steps required.
+
+To enable it on a new fork: go to **Settings → Pages** and set the source to **GitHub Actions**.
